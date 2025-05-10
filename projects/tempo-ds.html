@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Tempo Design System</title>
+</head>
+    <body>
+        <header>
+            <h1>Tempo Design System</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+        <h1>Design System Tempo</h1>
+
+        <h2>Project Background</h2>
+        <p>The following project is the result of refactoring a design system delivered by a former supplier of the institution. The previous project was incomplete and was resumed later by a dedicated team.</p>
+
+        <p>Some points found in the delivered version (also referred to as legacy version):</p>
+            <ul>   
+            <li>Components focused on a specific product, resulting in a lack of options for other products
+            <li>Components designed in a macro manner, hindering scalability within the tool
+            <li>Components designed in an outdated manner in Figma
+            <li>Redundant components that are not reflected in the repository
+            <li>Outdated component documentation and inconsistent with other sources (Zeroheight, Storybook)
+            <li>Components built incorrectly and sometimes even unfinished, causing issues during application
+            <li>Design System APP version not replicated in development
+            <li>Lack of a dedicated team led to various forks, reducing the idea of community and collaborative development
+            <li>Technologies not in line with the products' needs, resulting in many "shortcuts" and parallel solutions
+            <li>Lack of changelog, resulting in unawareness of changes and long searches in case of bugs
+            <li>Discrepancy in behavior, states, and variations of components compared to Figma
+            <li>Components created by teams that should be in the local fork, within the Core repository
+            </ul>
+
+        <h2>A New Design System</h2>
+        <p>After analyzing the situation of the legacy version, it was decided to create a version 2.0 of what was delivered. We took the opportunity to review, recreate, and adjust the design foundations and how to apply the design system for both designers and developers.</p>
+
+        <p>The focal points of the Design System would be: Accessibility, Community, and Scalability.</p>
+
+        <h3>Colors</h3>
+        <p>An old desire was to have a dark theme for the Design System. For this, we created the necessary color tokens and gave them a "role." Each role has an associated color token for the light version and another for the dark version, within the Figma variables feature.</p>
+
+        <img src="img/01.png" alt="">
+
+        <p>All colors roles were tested to have a minimum AA contrast, according to WCAG rules, aiding in the product's accessibility. </p>
+
+        <h3>Tipography</h3>
+        <p>On the legacy project the tipogaphy are divide by Web ( with two divisions: desktop and mobile) and App, resulting in multiples redudancies on tipography styles and, at same time, missing some options. </p>
+
+        <p>I remake and add some styles to ensure a good range of options to use on text hierarchy.</p>
+        
+        <img src="img/02.png" alt="">
+
+        <h2>Other Foundations</h2>
+        <p>Additionally, spacing tokens, typography style, and other tokens used in component construction (border radius, internal spacings, etc.) were created.</p>
+
+        <img src="img/03.png" alt="">
+
+        <h3>Component Redesign</h3>
+        <p>First of all, I need to know what components we have and how organize them. The legacy projetc use two libraries (Web and App) with some repeated components and multiple components that can be a single one.</p>
+
+        <img src="img/04.png" alt="">
+
+        <p>I want to a new division that makes more sense, once the two list will be merged on a single one (for both Web and App components). I separated the components in Base Components (simple components that can be used alone and to build another components), Composed Components (more complex components that have multiple interactions and can use the base components) and Base Structures (complex that can fit diverse types of content - the idea here are to make a lot of content placeholders that will make the number of detach on Figma fall). The new list below:</p>
+
+        <img src="img/05.png" alt="">
+
+        <p>Some components were made only to support the construction of larger components. An example is the stateLayer, which already contains hover, pressed, and dragged interactions, maintaining visual coherence across various components and advancing in the prototyping phase.</p>
+        
+        <img src="img/06.png" alt="">
+
+        <p>Some functional components from the legacy version were also redesigned with new variables, providing greater versatility. Simultaneously, separate components were merged to make development easier and more cohesive.</p>
+
+        <p>The image below shows two old/legacy components, that are badly constructed.</p>
+
+        <img src="img/07.png" alt="">    
+
+        <p>We remake this component adding two new button types and the merging the buttonIcon, previously a separate component, adding more options to the design team ont their projects.</p>
+        
+        <img src="img/08.png" alt="">
+        <img src="img/09.png" alt="">
+
+        <p>The components were designed to be used in both web and app scenarios. The idea is to maintain cohesive interactions and experiences across various platforms, always taking into account the unique characteristics of each support.</p>
+
+        <p>Some components created, already with their dark theme version:</p>
+
+        <img src="img/10.png" alt="">
+
+        <h3>Handoff</h3>
+        <p>To make the development easier I created a simple file with all components structures (naming every part to help comunication between designers and developers), states, measures and modifiers. A example below for button structure:</p>
+        
+        <img src="img/11.png" alt="">
+
+        <h3>Documentation</h3>
+        <p>I choose to use Zeroheight as documentation tool for designers while using Storybook on development side. This part are in development at moment.</p>
+
+        <h2>Development</h2>
+        <p>When it comes to design systems, it's necessary to also consider development, as this is where the product will actually be used. I like to know a little of development to ensure the quality and viability on my designs and decisions.</p>
+
+        <p>We changed the technology, creating components with composed patterns, allowing them to be altered in all ways, covering teams' urgent needs without detracting from the design fundamentals. This way, any changes can go directly to the community folder without affecting or locking products under construction.</p>
+
+        <h3>New Repository Architecture</h3>
+        <p>The legacy architecture, linked to the lack of a dedicated team, led to numerous copies of the Core components of the Design System, going against the idea of a collaborative and community-driven project.</p>
+        
+        <img src="img/12.png" alt="">
+
+        <p>The new proposal includes two folders: one for the core (with components created by the dedicated team and which can only be updated by them) and one for the community. In the community folder, if necessary, the squad team will make changes to an existing component for a specific product need, and this modified component will be available to be copied by another squad that needs the same solution. This keeps all squads aware of components adapted or created by other teams and facilitates the dedicated Design System team in finding improvements to be promoted to the Core library.</p>
+
+        <img src="img/13.png" alt="">
+        
+        <h2>Next Steps</h2>
+        <h3>An ongoing project</h3>
+        <p>Having addressed the major issues of the legacy version, the focus now is to grow and further enhance the documentation of this version.</p>
+
+        <p>We will also consider the workflows for adding new components, gathering new icons and illustrations, a sound library, a library of components focused on large screens (televisions and similar), and the optimization and automation of commits, pull requests, and changelogs for the teams.</p>
+
+        Thanks!
+        </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
