@@ -1,29 +1,100 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import '/foundations.css';
+
+/* --- GERAL ---*/
+:root {
+    --color-primary: #FFAB02;
+    --color-secondary: #FFDD9B;
+    --cor-texto: #ffffff;
+    --bg-color: #0C0B08;
+}
 
 * {
     margin: 0;
     padding: 0;
 }
 
+/* --- HEADER --- */
+header {
+    padding: 20px;
+}
+
+header a {
+    color: var(--color-primary);
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Figtree', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+header nav{
+    display: inline-block;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 20px;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+header ul a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+header ul a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- BODY --- */
+body {
+    background-color: var(--bg-color);
+    color: var(--cor-texto);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
 /* --- MAIN --- */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    color: --;
+}
 
 main h1 {
     font-family: 'Figtree', sans-serif;
     font-size: 2.5rem;
     font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 20px;
 }
 
 main h2 {
+    color: var(--color-secondary);
     font-family: 'Figtree', sans-serif;
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 400;
+    margin-bottom: 4px;
+    margin-top: 16px;
 }
 
 main h3 {
     font-family: 'Figtree', sans-serif;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 400;
+    margin-bottom: 4px;
+    margin-top: 16px;
 }
 
 main p {
@@ -31,6 +102,7 @@ main p {
     font-size: 1rem;
     font-weight: normal;
     line-height: 1.5;
+    margin-bottom: 20px;
 }
 
 main ul{
@@ -38,6 +110,10 @@ main ul{
     font-size: 1rem;
     font-weight: normal;
     line-height: 1.5;
+}
+
+main ul li{
+    list-style-position: inside;
 }
 
 main img {
