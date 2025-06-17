@@ -4,54 +4,57 @@
 
 /* --- GERAL ---*/
 :root {
-    --color-primary: #FFAB02;
-    --color-secondary: #FFDD9B;
-    --cor-texto: #ffffff;
+    --clr-pri: #FFAB02;
+    --clr-sec: #FFDD9B;
+    --clr-txt: #ffffff;
+    --clr-txtalt: #0C0B00;
     --bg-color: #0C0B08;
 }
 
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 /* --- HEADER --- */
 header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
     padding: 20px;
 }
 
 header a {
-    color: var(--color-primary);
+    flex-basis: 200px;
+
+    color: var(--clr-pri);
     text-decoration: none;
-    display: inline-block;
+
     font-family: 'Figtree', sans-serif;
     font-size: 1rem;
     font-weight: 600;
 }
 
 header nav{
-    display: inline-block;
+    flex-flow: row nowrap;
 }
 
-header nav ul {
-    list-style: none;
-    padding: 20px;
-}
-
-header nav ul li {
+header > nav > a {
     display: inline-block;
     margin-right: 20px;
-}
 
-header ul a {
     text-decoration: none;
-    color: var(--cor-texto);
+    color: var(--clr-txt);
+
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
-    font-weight: normal;
+    font-weight: 600;
 }
 
-header ul a:hover {
+header > nav > a:hover {
     text-decoration: underline;
 }
 
@@ -59,15 +62,77 @@ header ul a:hover {
 /* --- BODY --- */
 body {
     background-color: var(--bg-color);
-    color: var(--cor-texto);
+    color: var(--clr-txt);
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
     line-height: 1.5;
 }
 /* --- MAIN --- */
+/* --- PROFILE HOME --- */
+
+section#profileHome {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 32px;
+    margin-top: 64px;
+}
+
+img#profileImg {
+    flex: 0 0 200px;
+    width: 200px;
+    height: 200px;
+
+    background-color: var(--clr-pri);
+    border-radius: 500px;
+}
+
+div#profileHomeInfos {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+section#profileHome  h1 {
+    font-family: 'Figtree', sans-serif;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    font-weight: 600;
+    color: var(--clr-pri);
+    margin-bottom: 0px;
+}
+
+section#profileHome h2 {
+    color: var(--clr-sec);
+    font-family: 'Figtree', sans-serif;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: 400;
+    margin-top: 0px;
+}
+
+div#profileHomeLinks{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 16px;
+}
+section#profileHome a.bttn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--clr-pri);
+    color: var(--clr-txtalt);
+    text-decoration: none;
+    font-family: 'Figtree', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 500px;
+}
+
+
+
 main {
     padding: 20px;
-    max-width: 800px;
+    width: 80vw;
+    max-width: 1200px;
     margin: auto;
     color: --;
 }
@@ -76,12 +141,12 @@ main h1 {
     font-family: 'Figtree', sans-serif;
     font-size: 2.5rem;
     font-weight: 600;
-    color: var(--color-primary);
+    color: var(--clr-pri);
     margin-bottom: 20px;
 }
 
 main h2 {
-    color: var(--color-secondary);
+    color: var(--clr-sec);
     font-family: 'Figtree', sans-serif;
     font-size: 2rem;
     font-weight: 400;
