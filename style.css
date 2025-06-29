@@ -67,18 +67,20 @@ body {
     font-size: 1rem;
     line-height: 1.5;
 }
+
 /* --- MAIN --- */
 /* --- PROFILE HOME --- */
-
 section#profileHome {
     display: flex;
     flex-flow: row nowrap;
+    justify-content: center;
+    
     gap: 32px;
     margin-top: 64px;
 }
 
 img#profileImg {
-    flex: 0 0 200px;
+    flex: 0 1 200px;
     width: 200px;
     height: 200px;
 
@@ -115,19 +117,31 @@ div#profileHomeLinks{
     flex-flow: row nowrap;
     gap: 16px;
 }
-section#profileHome a.bttn {
-    display: inline-block;
+
+a.bttn {
+    display: flex;
+
     padding: 8px 16px;
     background-color: var(--clr-pri);
     color: var(--clr-txtalt);
     text-decoration: none;
+
     font-family: 'Figtree', sans-serif;
     font-size: 1rem;
     font-weight: 600;
     border-radius: 500px;
 }
 
+a.bttn:hover {
+    background-color: var(--clr-sec);
+    color: var(--clr-txt);
+}
 
+a.bttn > img{
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
 
 main {
     padding: 20px;
